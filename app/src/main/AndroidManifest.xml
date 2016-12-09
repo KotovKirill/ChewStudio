@@ -18,6 +18,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StatisticActivity"
+            android:label="@string/title_activity_statistic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InformationActivity"
+            android:label="@string/title_activity_information"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodActivity"
+            android:label="@string/title_activity_food"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity.EditAccountSettingsActivity"
+            android:label="@string/title_activity_edit_account_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity.GadgetActivity.GadgetActivity"
+            android:label="@string/title_activity_gadget"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity.GadgetActivity.ChangeGadgetActivity"
+            android:label="@string/title_activity_change_gadget"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity.LearningActivity"
+            android:label="@string/title_activity_learning"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Пользователь: Магомед Хабибович"
+            android:text="@string/content_main_text_view_user"
             android:textColor="@android:color/white"
             style="@style/Base.TextAppearance.AppCompat.Medium"/>
     </LinearLayout>
@@ -27,38 +27,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/content_main_button_settings"
+                android:text="@string/content_main_text_view_settings"
+                android:drawableTop="@drawable/analytics_icon"
+                android:layout_weight="1"
+                android:onClick="mainButtonsListener"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/content_main_button_statistic"
+                android:text="@string/content_main_text_view_statistic"
+                android:drawableTop="@drawable/analytics_icon"
+                android:layout_weight="1"
+                android:onClick="mainButtonsListener"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/content_main_button_information"
+                android:text="@string/content_main_text_view_information"
+                android:drawableTop="@drawable/analytics_icon"
+                android:layout_weight="1"
+                android:onClick="mainButtonsListener"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Настройки"
-            android:drawableTop="@drawable/analytics_icon"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Статистика"
-            android:drawableTop="@drawable/analytics_icon"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Информация"
-            android:drawableTop="@drawable/analytics_icon"
-            android:layout_weight="1"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/content_main_button_food"
+                android:text="@string/content_main_button_food"
+                android:drawableTop="@drawable/analytics_icon"
+                android:layout_weight="1"
+                android:onClick="mainButtonsListener"/>
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Питание"
-            android:drawableTop="@drawable/analytics_icon"
-            android:layout_weight="1" />
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
 
