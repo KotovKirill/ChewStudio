@@ -190,4 +190,5 @@
                 android:id="@+id/button_exit"/>
         </android.support.v7.widget.CardView>
     </LinearLayout>
+
 </android.support.v4.widget.NestedScrollView>
