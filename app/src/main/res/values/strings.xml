@@ -18,7 +18,7 @@
     <string name="content_settings_edit_information">Редактировать информацию</string>
     <string name="content_settings_text_view_user">Магомед Хабибович</string>
     <string name="text_view_settings">Настройки</string>
-    <string name="button_text_notifications">Звуки и индикация</string>
+    <string name="content_settings_button_notifications">Звуки и индикация</string>
     <string name="button_text_exit">Выход</string>
     <string name="button_text_gadget">Гаджет</string>
     <string name="button_text_account">Аккаунт</string>
@@ -51,4 +51,16 @@
     <string name="title_activity_change_gadget">ChangeGadgetActivity</string>
     <string name="title_activity_learning">LearningActivity</string>
     <string name="content_main_checkbox_learning">Режим обучения</string>
+
+    <string name="title_activity_notification">Звуки и индикация</string>
+    <string name="content_settings_text_replace_food">Смена блюд</string>
+    <string name="content_main_checkbox_text">Выводить текст</string>
+    <string name="content_main_checkbox_sound">Звуковое оповещение</string>
+    <string name="content_settings_text_learning">Режим обучениея</string>
+    <string name="content_settings_radio_button_bipper">Биппер</string>
+    <string name="content_settings_radio_button_melody">Мелодия</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="text_view_version">Версия 0.0.1</string>
+    <string name="text_view_author">© 2016 Organization Name.</string>
+    <string name="text_view_rights_reserved">All rights reserved.</string>
 </resources>

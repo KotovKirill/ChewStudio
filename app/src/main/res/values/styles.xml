@@ -23,4 +23,8 @@
         <item name="android:background">@drawable/button_theme_background</item>
         <item name="android:padding">10dp</item>
     </style>
+
+    <style name="ButtonTheme.Main" parent="ButtonTheme">
+        <item name="android:background">@drawable/buttons_main_theme_background</item>
+    </style>
 </resources>

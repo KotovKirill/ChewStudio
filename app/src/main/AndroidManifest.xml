@@ -49,6 +49,14 @@
         <activity
             android:name=".SettingsActivity.LearningActivity"
             android:label="@string/title_activity_learning"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity.NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SettingsActivity.AboutUsActivity"
+            android:label="@string/title_activity_about_us"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

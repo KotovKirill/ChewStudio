@@ -107,11 +107,13 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_text_notifications"
+                    android:text="@string/content_settings_button_notifications"
                     android:gravity="left|center_vertical"
                     android:drawableLeft="@drawable/ic_bell"
                     android:paddingTop="8dp"
-                    android:paddingBottom="8dp"/>
+                    android:paddingBottom="8dp"
+                    android:onClick="buttonsListener"
+                    android:id="@+id/content_settings_button_notifications"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -129,7 +131,7 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:id="@+id/content_settings_button_learning"
-                    android:onClick="buttonsListener"/>
+                    android:onClick="buttonsListener" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -164,7 +166,9 @@
                     android:gravity="left|center_vertical"
                     android:drawableLeft="@drawable/ic_account_box"
                     android:paddingTop="8dp"
-                    android:paddingBottom="8dp"/>
+                    android:paddingBottom="8dp"
+                    android:id="@+id/content_settings_button_about_us"
+                    android:onClick="buttonsListener"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

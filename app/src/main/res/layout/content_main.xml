@@ -40,7 +40,8 @@
                 android:text="@string/content_main_text_view_settings"
                 android:drawableTop="@drawable/analytics_icon"
                 android:layout_weight="1"
-                android:onClick="mainButtonsListener"/>
+                android:onClick="mainButtonsListener"
+                style="@style/ButtonTheme.Main"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,7 +49,8 @@
                 android:text="@string/content_main_text_view_statistic"
                 android:drawableTop="@drawable/analytics_icon"
                 android:layout_weight="1"
-                android:onClick="mainButtonsListener"/>
+                android:onClick="mainButtonsListener"
+                style="@style/ButtonTheme.Main"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,7 +58,8 @@
                 android:text="@string/content_main_text_view_information"
                 android:drawableTop="@drawable/analytics_icon"
                 android:layout_weight="1"
-                android:onClick="mainButtonsListener"/>
+                android:onClick="mainButtonsListener"
+                style="@style/ButtonTheme.Main"/>
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +74,8 @@
                 android:text="@string/content_main_button_food"
                 android:drawableTop="@drawable/analytics_icon"
                 android:layout_weight="1"
-                android:onClick="mainButtonsListener"/>
+                android:onClick="mainButtonsListener"
+                style="@style/ButtonTheme.Main"/>
         </LinearLayout>
     </LinearLayout>
 

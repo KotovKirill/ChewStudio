@@ -32,6 +32,12 @@ public class SettingsActivity extends AppCompatActivity {
             case R.id.content_settings_button_learning:
                 aClass = LearningActivity.class;
                 break;
+            case R.id.content_settings_button_notifications:
+                aClass = NotificationActivity.class;
+                break;
+            case R.id.content_settings_button_about_us:
+                aClass = AboutUsActivity.class;
+                break;
         }
         Intent intent = new Intent(this, aClass);
         startActivity(intent);
