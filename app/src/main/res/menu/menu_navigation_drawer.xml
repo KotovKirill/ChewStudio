@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_help_circle"
+            android:title="@string/nav_menu_help"
+            android:id="@+id/menu_navigation_help"
+            android:checked="true" />
+        <item
+            android:icon="@drawable/ic_email_open_light"
+            android:title="@string/nav_menu_mail"
+            android:id="@+id/menu_navigation_write_author"
+            android:checked="true"/>
+    </group>
+
+    <item android:title="@string/nav_sub_more">
+        <menu>
+            <item
+                android:id="@+id/menu_navigation_settings"
+                android:icon="@drawable/ic_checkbox_multiple_marked"
+                android:title="@string/nav_item_access" />
+            <item
+                android:id="@+id/menu_navigation_about"
+                android:icon="@drawable/ic_account_box_light"
+                android:title="@string/nav_item_about" />
+        </menu>
+    </item>
+
+</menu>

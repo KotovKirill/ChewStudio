@@ -27,4 +27,8 @@
     <style name="ButtonTheme.Main" parent="ButtonTheme">
         <item name="android:background">@drawable/buttons_main_theme_background</item>
     </style>
+
+    <style name="ButtonTheme.Exit" parent="ButtonTheme">
+        <item name="android:background">@drawable/buttons_exit_theme_background</item>
+    </style>
 </resources>

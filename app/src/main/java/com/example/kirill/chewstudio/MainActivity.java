@@ -2,21 +2,72 @@ package com.example.kirill.chewstudio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.internal.NavigationMenuView;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.ShareCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.kirill.chewstudio.SettingsActivity.AboutUsActivity;
 import com.example.kirill.chewstudio.SettingsActivity.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        initComponents();
+    }
+
+    private void initComponents() {
+        initToolbar();
+        initNavigationView();
+    }
+
+    private void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    private void initNavigationView() {
+        drawerLayout = (DrawerLayout) this.findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, this.drawerLayout, this.toolbar,
+                R.string.view_navigation_open, R.string.view_navigation_close);
+        this.drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        this.navigationView = (NavigationView) this.findViewById(R.id.navigation_view);
+        this.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                drawerLayout.closeDrawers();
+                switch (item.getItemId()){
+                    case R.id.menu_navigation_write_author:
+                        buttonClickSendMessage();
+                        break;
+                    case R.id.menu_navigation_about:
+                        startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+                        break;
+                    case R.id.menu_navigation_help:
+                        startActivity(new Intent(MainActivity.this, InformationActivity.class));
+                        break;
+                }
+                return true;
+            }
+        });
+
+        NavigationMenuView menuView = (NavigationMenuView) this.navigationView.getChildAt(0);
+        if(menuView != null)
+            menuView.setVerticalScrollBarEnabled(false);
     }
 
     @Override
@@ -53,5 +104,15 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this, aClass);
         startActivity(intent);
+    }
+
+    private void buttonClickSendMessage() {
+        ShareCompat.IntentBuilder.from(this)
+                .setType("message/rfc822")
+                .addEmailTo("example@mail.ru")
+                .setSubject(getResources().getString(R.string.app_name))
+                .setText(getString(R.string.intent_builder_text_message))
+                .setChooserTitle(R.string.intent_builder_text_title)
+                .startChooser();
     }
 }

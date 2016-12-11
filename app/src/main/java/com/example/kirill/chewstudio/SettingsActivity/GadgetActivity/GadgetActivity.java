@@ -17,8 +17,11 @@ public class GadgetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gadget);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        initComponents();
+    }
+
+    private void initComponents() {
+        initToolbar();
 
         textView = (TextView) this.findViewById(R.id.content_settings_change_gadget);
         textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -27,6 +30,19 @@ public class GadgetActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(GadgetActivity.this, ChangeGadgetActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

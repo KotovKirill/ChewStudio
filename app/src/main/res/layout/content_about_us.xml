@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_view_version"
-        android:textColor="#CE93D8"
+        android:textColor="#90CAF9"
         style="@style/Base.TextAppearance.AppCompat.Medium"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_view_author"
-        android:textColor="#CE93D8"
+        android:textColor="#90CAF9"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_view_rights_reserved"
-        android:textColor="#CE93D8"
+        android:textColor="#90CAF9"
         android:id="@+id/textView4"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
