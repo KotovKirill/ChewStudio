@@ -45,20 +45,20 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:paddingBottom="4dp"
-                        android:id="@+id/username"
+                        android:id="@+id/content_settings_edit_text_user_name"
                         android:layout_centerVertical="true"
-                        android:layout_alignLeft="@+id/email"
-                        android:layout_alignStart="@+id/email" />
+                        android:layout_alignLeft="@+id/content_settings_edit_text_user_secname"
+                        android:layout_alignStart="@+id/content_settings_edit_text_user_secname" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/content_settings_text_mail"
-                        android:id="@+id/email"
+                        android:id="@+id/content_settings_edit_text_user_secname"
                         android:gravity="left"
                         android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:layout_below="@+id/username"
+                        android:layout_below="@+id/content_settings_edit_text_user_name"
                         android:layout_toRightOf="@+id/profile_image"
                         android:layout_marginLeft="21dp" />
                 </RelativeLayout>

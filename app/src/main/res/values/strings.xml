@@ -7,16 +7,16 @@
     <string name="title_activity_food">FoodActivity</string>
 
     <!-- MainActivity -->
-    <string name="content_main_text_view_user">Пользователь: Магомед Хабибович</string>
+    <string name="content_main_text_view_user">Не выбрано</string>
     <string name="content_main_text_view_settings">Настройки</string>
     <string name="content_main_text_view_statistic">Статистика</string>
     <string name="content_main_text_view_information">Информация</string>
     <string name="content_main_button_food">Питание</string>
 
     <!-- SettingsActivity -->
-    <string name="content_settings_text_mail">example@ttr.ru</string>
+    <string name="content_settings_text_mail">Не выбрано</string>
     <string name="content_settings_edit_information">Редактировать информацию</string>
-    <string name="content_settings_text_view_user">Магомед Хабибович</string>
+    <string name="content_settings_text_view_user">Не выбрано</string>
     <string name="text_view_settings">Настройки</string>
     <string name="content_settings_button_notifications">Звуки и индикация</string>
     <string name="button_text_exit">Выход</string>
@@ -29,19 +29,19 @@
     <string name="content_settings_button_learning">Обучение</string>
 
     <string name="title_activity_edit_account_settings">Пользователь</string>
-    <string name="content_settings_edit_text_user_name">Магомед</string>
+    <string name="content_settings_edit_text_user_name">Не выбрано</string>
     <string name="content_settings_biometric_data">Биометрические данные</string>
     <string name="content_settings_button_date_born">Дата рождения</string>
-    <string name="content_settings_button_group_kr">Группа крови</string>
+    <string name="content_settings_text_group_kr">Группа крови</string>
     <string name="content_settings_button_weigth">Вес</string>
-    <string name="content_settings_button_rost">Рост</string>
-    <string name="content_main_text_address">Место жительства</string>
+    <string name="content_settings_text_rost">Рост</string>
+    <string name="content_settings_text_address">Место жительства</string>
     <string name="content_main_text_health">Здоровье</string>
-    <string name="content_main_text_type_food">Тип питания</string>
-    <string name="content_main_text_crank">Заболевание</string>
+    <string name="content_settings_text_type_food">Тип питания</string>
+    <string name="content_settings_text_crank">Заболевание</string>
     <string name="content_main_radio_button_male">Мужской</string>
     <string name="content_main_radio_button_female">Женский</string>
-    <string name="content_settings_text_user_secname">Хабибович</string>
+    <string name="content_settings_text_user_secname">Не выбрано</string>
     <string name="title_activity_gadget">Гаджет</string>
     <string name="content_settings_gadget">Настройки гаджета</string>
     <string name="content_settings_text_guyphone">Жуйфон</string>
@@ -66,6 +66,7 @@
     <string name="intent_builder_text_message">Ваше сообщение ...</string>
     <string name="intent_builder_text_title">Отправить сообщение</string>
     <string name="content_settings_text_count">Количество жеваний</string>
+
     <string name="view_navigation_open">Открыть</string>
     <string name="view_navigation_close">Закрыть</string>
     <string name="nav_menu_help">Помощь</string>
@@ -73,4 +74,12 @@
     <string name="nav_sub_more">Дополнительно</string>
     <string name="nav_item_access">Оценить</string>
     <string name="nav_item_about">О нас</string>
+    <string name="content_settings_text_no_changed">Не выбрано</string>
+    <string name="content_settings_text_weight">Вес</string>
+    <string name="content_settings_text_input_group_krovi">Введите группу крови</string>
+    <string name="content_settings_text_input_weigth">Введите вес</string>
+    <string name="content_settings_text_input_rost">Введите рост</string>
+    <string name="content_settings_text_input_address">Введите место проживания</string>
+    <string name="content_settings_text_input_type_food">Введите тип питания</string>
+    <string name="content_settings_text_input_crank">Введите заболевание</string>
 </resources>

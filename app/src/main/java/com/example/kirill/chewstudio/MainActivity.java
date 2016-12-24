@@ -1,6 +1,8 @@
 package com.example.kirill.chewstudio;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
@@ -12,14 +14,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kirill.chewstudio.SettingsActivity.AboutUsActivity;
+import com.example.kirill.chewstudio.SettingsActivity.EditAccountSettingsActivity;
 import com.example.kirill.chewstudio.SettingsActivity.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private SharedPreferences mSettings;
+    private TextView textViewUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +35,20 @@ public class MainActivity extends AppCompatActivity {
         initComponents();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.textViewUserName = (TextView) this.findViewById(R.id.content_main_text_view_user);
+        if(mSettings.contains(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_NAME)
+                && mSettings.contains(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_SEC_NAME))
+            this.textViewUserName.setText("Пользователь: "
+                    + mSettings.getString(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_NAME, "")
+                    + " " + mSettings.getString(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_SEC_NAME, ""));
+    }
+
     private void initComponents() {
+        this.mSettings = getSharedPreferences(EditAccountSettingsActivity.ACCOUNT_PREFERENCES,
+                Context.MODE_PRIVATE);
         initToolbar();
         initNavigationView();
     }

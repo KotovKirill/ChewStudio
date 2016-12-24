@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:text="@string/content_main_text_view_user"
             android:textColor="@android:color/white"
-            style="@style/Base.TextAppearance.AppCompat.Medium"/>
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/content_main_text_view_user"/>
     </LinearLayout>
 
     <LinearLayout

@@ -1,18 +1,25 @@
 package com.example.kirill.chewstudio.SettingsActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.kirill.chewstudio.R;
 import com.example.kirill.chewstudio.SettingsActivity.GadgetActivity.GadgetActivity;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
     private Button buttonSendMail;
+    private Button buttonExit;
+    private TextView textViewUserName;
+    private TextView textViewUserSecName;
+    private SharedPreferences mSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +27,23 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         initComponents();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(mSettings.contains(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_NAME)
+                && mSettings.contains(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_SEC_NAME)) {
+            this.textViewUserName.setText(mSettings.getString(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_NAME, "Не выбрано"));
+            this.textViewUserSecName.setText(mSettings.getString(EditAccountSettingsActivity.ACCOUNT_PREFERENCES_USER_SEC_NAME, "Не выбрано"));
+        }
+    }
+
     private void initComponents() {
+        this.mSettings = getSharedPreferences(EditAccountSettingsActivity.ACCOUNT_PREFERENCES,
+                Context.MODE_PRIVATE);
         initToolbar();
         initButtons();
+        this.textViewUserName = (TextView) this.findViewById(R.id.content_settings_edit_text_user_name);
+        this.textViewUserSecName = (TextView) this.findViewById(R.id.content_settings_edit_text_user_secname);
     }
 
     private void initToolbar() {
@@ -41,6 +62,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private void initButtons() {
         this.buttonSendMail = (Button) this.findViewById(R.id.content_settings_button_feedback);
         this.buttonSendMail.setOnClickListener(this);
+
+        this.buttonExit = (Button) this.findViewById(R.id.button_exit);
+        this.buttonExit.setOnClickListener(this);
     }
 
     public void buttonsListener(View view) {
