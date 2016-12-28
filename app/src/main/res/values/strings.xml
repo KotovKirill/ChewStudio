@@ -82,4 +82,11 @@
     <string name="content_settings_text_input_address">Введите место проживания</string>
     <string name="content_settings_text_input_type_food">Введите тип питания</string>
     <string name="content_settings_text_input_crank">Введите заболевание</string>
+    <string name="content_settings_text_save_settings">Настроойки успешно сохранены</string>
+    <string name="content_settings_alert_dialog_title">Выход из аккаунта</string>
+    <string name="content_settings_alert_dialog_message">Вы действительно хотите выйти?</string>
+    <string name="content_food_button_local_menu">Местное меню</string>
+    <string name="content_food_button_change_restaurant">Выьор ресторана</string>
+    <string name="content_food_button_qr_menu">QR-меню</string>
+    <string name="content_food_button_self_menu">Свое меню</string>
 </resources>
