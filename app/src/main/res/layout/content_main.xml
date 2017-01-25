@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/content_main_button_settings"
                 android:text="@string/content_main_text_view_settings"
-                android:drawableTop="@drawable/analytics_icon"
+                android:drawableTop="@drawable/settings_icon"
                 android:layout_weight="1"
                 android:onClick="mainButtonsListener"
                 style="@style/ButtonTheme.Main"/>
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/content_main_button_information"
                 android:text="@string/content_main_text_view_information"
-                android:drawableTop="@drawable/analytics_icon"
+                android:drawableTop="@drawable/info_icon"
                 android:layout_weight="1"
                 android:onClick="mainButtonsListener"
                 style="@style/ButtonTheme.Main"/>
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/content_main_button_food"
                 android:text="@string/content_main_button_food"
-                android:drawableTop="@drawable/analytics_icon"
+                android:drawableTop="@drawable/dinner_icon"
                 android:layout_weight="1"
                 android:onClick="mainButtonsListener"
                 style="@style/ButtonTheme.Main"/>

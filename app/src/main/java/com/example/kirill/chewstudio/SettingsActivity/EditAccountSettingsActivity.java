@@ -10,16 +10,16 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kirill.chewstudio.R;
 
@@ -60,7 +60,6 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
     private int mYear;
     private int mMonth;
     private int mDay;
-    private String avatarPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,6 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
     private void initComponents() {
         this.mSettings = getSharedPreferences(ACCOUNT_PREFERENCES, Context.MODE_PRIVATE);
         initToolbar();
-        initFloatingActionButton();
         viewCircleImage = (CircleImageView) this.findViewById(R.id.profile_image);
         viewCircleImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,12 +80,11 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_AVATAR);
             }
         });
-        initTextView();
+        initInputForms();
     }
 
-    private void initTextView() {
-        textViewUserName = (EditText) this.findViewById(R.id.content_settings_edit_text_user_name);
-        textViewUserSecName = (EditText) this.findViewById(R.id.content_settings_edit_text_user_secname);
+    private void initInputForms() {
+        initEditText();
         textViewGroupKrovi = (TextView) this.findViewById(R.id.text_view_settings_group_krovi);
         textViewWight = (TextView) this.findViewById(R.id.text_view_settings_weight);
         textViewRost = (TextView) this.findViewById(R.id.text_view_settings_rost);
@@ -95,11 +92,16 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
         textViewTypeFood = (TextView) this.findViewById(R.id.text_view_settings_type_food);
         textViewCrank = (TextView) this.findViewById(R.id.text_view_settings_crank);
         radioGroupUserPol = (RadioGroup) findViewById(R.id.content_settings_radio_group);
-
-        textViewUserName.setText(mSettings.getString(ACCOUNT_PREFERENCES_USER_NAME,
-                getResources().getString(R.string.content_settings_text_no_changed)));
-        textViewUserSecName.setText(mSettings.getString(ACCOUNT_PREFERENCES_USER_SEC_NAME,
-                getResources().getString(R.string.content_settings_text_no_changed)));
+        radioGroupUserPol.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                SharedPreferences.Editor editor = mSettings.edit();
+                editor.putInt(ACCOUNT_PREFERENCES_USER_POL, checkedId);
+                editor.apply();
+            }
+        });
+        textViewUserName.setText(mSettings.getString(ACCOUNT_PREFERENCES_USER_NAME, ""));
+        textViewUserSecName.setText(mSettings.getString(ACCOUNT_PREFERENCES_USER_SEC_NAME, ""));
         textViewGroupKrovi.setText(mSettings.getString(ACCOUNT_PREFERENCES_GROUP_KROVI,
                 getResources().getString(R.string.content_settings_text_no_changed)));
         textViewWight.setText(mSettings.getString(ACCOUNT_PREFERENCES_WEIGHT,
@@ -129,6 +131,45 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
         }
     }
 
+    private void initEditText() {
+        textViewUserName = (EditText) this.findViewById(R.id.content_settings_edit_text_user_name);
+        textViewUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                SharedPreferences.Editor editor = mSettings.edit();
+                editor.putString(ACCOUNT_PREFERENCES_USER_NAME,
+                        textViewUserName.getText().toString());
+                editor.apply();
+            }
+        });
+        textViewUserSecName = (EditText) this.findViewById(R.id.content_settings_edit_text_user_secname);
+        textViewUserSecName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                SharedPreferences.Editor editor = mSettings.edit();
+                editor.putString(ACCOUNT_PREFERENCES_USER_SEC_NAME,
+                        textViewUserSecName.getText().toString());
+                editor.apply();
+            }
+        });
+    }
+
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -142,41 +183,9 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void initFloatingActionButton() {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = mSettings.edit();
-                editor.putString(ACCOUNT_PREFERENCES_USER_NAME,
-                        textViewUserName.getText().toString());
-                editor.putString(ACCOUNT_PREFERENCES_USER_SEC_NAME,
-                        textViewUserSecName.getText().toString());
-                editor.putInt(ACCOUNT_PREFERENCES_USER_POL,
-                        radioGroupUserPol.getCheckedRadioButtonId());
-                editor.putString(ACCOUNT_PREFERENCES_GROUP_KROVI, textViewGroupKrovi.getText().toString());
-                editor.putString(ACCOUNT_PREFERENCES_WEIGHT, textViewWight.getText().toString());
-                editor.putString(ACCOUNT_PREFERENCES_ROST, textViewRost.getText().toString());
-                editor.putString(ACCOUNT_PREFERENCES_ADDRESS, textViewAddress.getText().toString());
-                editor.putString(ACCOUNT_PREFERENCES_TYPE_FOOD, textViewTypeFood.getText().toString());
-                editor.putString(ACCOUNT_PREFERENCES_CRANK, textViewCrank.getText().toString());
-                editor.putInt(ACCOUNT_PREFERENCES_DATE_BORN_YEAR, mYear);
-                editor.putInt(ACCOUNT_PREFERENCES_DATE_BORN_MONTH, mMonth);
-                editor.putInt(ACCOUNT_PREFERENCES_DATE_BORN_DAY, mDay);
-                if(avatarPath != null)
-                    editor.putString(ACCOUNT_PREFERENCES_USER_AVATAR, avatarPath);
-                editor.apply();
-                Toast.makeText(EditAccountSettingsActivity.this,
-                        R.string.content_settings_text_save_settings, Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-    }
-
     public void LinearLayoutListener(View view) {
         int id = view.getId();
-        if(id == R.id.content_settings_ll_date_born)
-        {
+        if(id == R.id.content_settings_ll_date_born) {
             DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -184,6 +193,11 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
                     mMonth = monthOfYear + 1;
                     mDay = dayOfMonth;
                     textViewDateBorn.setText(String.format("%d.%d.%d", mDay, mMonth, mYear));
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putInt(ACCOUNT_PREFERENCES_DATE_BORN_YEAR, mYear);
+                    editor.putInt(ACCOUNT_PREFERENCES_DATE_BORN_MONTH, mMonth);
+                    editor.putInt(ACCOUNT_PREFERENCES_DATE_BORN_DAY, mDay);
+                    editor.apply();
                 }
             }, mYear, mMonth-1, mDay);
             dialog.show();
@@ -239,21 +253,27 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
                 switch (idLl){
                     case R.id.content_settings_ll_group_krovi:
                         textViewGroupKrovi.setText(str);
+                        editor.putString(ACCOUNT_PREFERENCES_GROUP_KROVI, textViewGroupKrovi.getText().toString());
                         break;
                     case R.id.content_settings_ll_weight:
                         textViewWight.setText(textView.getText().toString());
+                        editor.putString(ACCOUNT_PREFERENCES_WEIGHT, textViewWight.getText().toString());
                         break;
                     case R.id.content_settings_ll_rost:
                         textViewRost.setText(str);
+                        editor.putString(ACCOUNT_PREFERENCES_ROST, textViewRost.getText().toString());
                         break;
                     case R.id.content_settings_ll_address:
                         textViewAddress.setText(str);
+                        editor.putString(ACCOUNT_PREFERENCES_ADDRESS, textViewAddress.getText().toString());
                         break;
                     case R.id.content_settings_ll_type_food:
                         textViewTypeFood.setText(str);
+                        editor.putString(ACCOUNT_PREFERENCES_TYPE_FOOD, textViewTypeFood.getText().toString());
                         break;
                     case R.id.content_settings_ll_crank:
                         textViewCrank.setText(str);
+                        editor.putString(ACCOUNT_PREFERENCES_CRANK, textViewCrank.getText().toString());
                         break;
                 }
                 editor.apply();
@@ -269,10 +289,12 @@ public class EditAccountSettingsActivity extends AppCompatActivity {
         if(resultCode == RESULT_OK)
             if(requestCode == REQUEST_AVATAR){
                 Uri uri = data.getData();
+                SharedPreferences.Editor editor = mSettings.edit();
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                     viewCircleImage.setImageBitmap(bitmap);
-                    avatarPath = uri.toString();
+                    editor.putString(ACCOUNT_PREFERENCES_USER_AVATAR, uri.toString());
+                    editor.apply();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -60,7 +60,8 @@
                         android:layout_gravity="center_vertical"
                         android:id="@+id/content_settings_change_gadget"
                         android:textColor="?attr/colorAccent"
-                        android:padding="10dp"/>
+                        android:padding="8dp"
+                        android:textSize="15dp"/>
                 </LinearLayout>
 
             </LinearLayout>

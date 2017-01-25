@@ -3,8 +3,6 @@ package com.example.kirill.chewstudio.SettingsActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -22,6 +20,7 @@ public class LearningActivity extends AppCompatActivity {
     public static final String LEARNING_PREFERENCES_MODE_L_TEXT = "learningmodetext";
 
     private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
     private CheckBox checkBoxLearningMode;
     private SeekBar seekBarCount;
     private TextView textViewStart_m;
@@ -35,10 +34,10 @@ public class LearningActivity extends AppCompatActivity {
 
     private void initComponents() {
         this.preferences = this.getSharedPreferences(LEARNING_PREFERENCES, Context.MODE_PRIVATE);
+        this.editor = preferences.edit();
         initToolbar();
         initSeekBar();
         initButtons();
-        initFloatingActionButton();
     }
 
     private void initToolbar() {
@@ -81,6 +80,8 @@ public class LearningActivity extends AppCompatActivity {
                     seekBarCount.setEnabled(false);
                     textViewStart_m.setEnabled(false);
                 }
+                editor.putBoolean(LEARNING_PREFERENCES_MODE_L, checkBoxLearningMode.isChecked());
+                editor.apply();
             }
         });
     }
@@ -92,6 +93,8 @@ public class LearningActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textViewStart_m.setText(String.valueOf(progress));
+                editor.putString(LEARNING_PREFERENCES_MODE_L_TEXT, textViewStart_m.getText().toString());
+                editor.apply();
             }
 
             @Override
@@ -103,21 +106,4 @@ public class LearningActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void initFloatingActionButton(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putBoolean(LEARNING_PREFERENCES_MODE_L, checkBoxLearningMode.isChecked());
-                editor.putString(LEARNING_PREFERENCES_MODE_L_TEXT, textViewStart_m.getText().toString());
-                editor.apply();
-                Toast.makeText(LearningActivity.this, getResources()
-                        .getString(R.string.content_settings_text_save_settings), Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-    }
-
 }

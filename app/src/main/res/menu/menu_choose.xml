@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.kirill.chewstudio.MainActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_optimal"
+            android:title="@string/action_optimal"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_custom"
+            android:title="@string/action_custom"
+            app:showAsAction="never"
+            android:checked="true"/>
+    </group>
+</menu>

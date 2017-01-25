@@ -21,7 +21,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_view_settings"
+                    android:text="@string/text_view_food"
                     style="@style/Base.TextAppearance.AppCompat.Small"
                     android:textColor="?attr/colorPrimary"
                     android:paddingLeft="20dp"
@@ -31,42 +31,46 @@
                     android:layout_height="wrap_content"
                     android:text="@string/content_food_button_local_menu"
                     android:gravity="left|center_vertical"
-                    android:drawableLeft="@drawable/ic_cellphone"
+                    android:drawableLeft="@drawable/ic_food"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:id="@+id/content_settings_button_gadget"
                     android:onClick="buttonsListener"
-                    android:enabled="false" />
+                    android:enabled="false"
+                    android:drawablePadding="10dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/content_food_button_change_restaurant"
                     android:gravity="left|center_vertical"
-                    android:drawableLeft="@drawable/ic_bell"
+                    android:drawableLeft="@drawable/ic_home_modern"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:onClick="buttonsListener"
                     android:id="@+id/content_settings_button_notifications"
-                    android:enabled="false"/>
+                    android:enabled="false"
+                    android:drawablePadding="10dp" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/content_food_button_qr_menu"
                     android:gravity="left|center_vertical"
-                    android:drawableLeft="@drawable/ic_account_box_outline"
+                    android:drawableLeft="@drawable/ic_qrcode"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
-                    android:enabled="false"/>
+                    android:enabled="false"
+                    android:drawablePadding="10dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/content_food_button_self_menu"
                     android:gravity="left|center_vertical"
-                    android:drawableLeft="@drawable/ic_arrange_bring_forward"
+                    android:drawableLeft="@drawable/ic_food_fork_drink"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
-                    android:id="@+id/content_settings_button_learning"
-                    android:onClick="buttonsListener" />
+                    android:id="@+id/content_food_button_self_menu"
+                    android:onClick="buttonsListener"
+                    android:drawablePadding="10dp"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 

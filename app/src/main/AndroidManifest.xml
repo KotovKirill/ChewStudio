@@ -25,7 +25,7 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".StatisticActivity"
+            android:name=".StatisticActivity.StatisticActivity"
             android:label="@string/title_activity_statistic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -33,7 +33,7 @@
             android:label="@string/title_activity_information"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".FoodActivity"
+            android:name=".FoodActivity.FoodActivity"
             android:label="@string/title_activity_food"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -59,6 +59,10 @@
         <activity
             android:name=".SettingsActivity.AboutUsActivity"
             android:label="@string/title_activity_about_us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodActivity.ChooseMenuActivity.ChooseMenuActivity"
+            android:label="@string/title_activity_choose_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

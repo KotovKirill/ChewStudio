@@ -15,11 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.kirill.chewstudio.FoodActivity.FoodActivity;
 import com.example.kirill.chewstudio.SettingsActivity.AboutUsActivity;
 import com.example.kirill.chewstudio.SettingsActivity.EditAccountSettingsActivity;
 import com.example.kirill.chewstudio.SettingsActivity.SettingsActivity;
+import com.example.kirill.chewstudio.StatisticActivity.StatisticActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;

@@ -37,8 +37,8 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/content_settings_edit_text_user_name"
-                        android:textSize="14sp"
+                        android:hint="@string/content_settings_edit_text_user_name_hint"
+                        android:textSize="18dp"
                         android:textColor="@android:color/black"
                         android:gravity="left"
                         android:id="@+id/content_settings_edit_text_user_name"
@@ -50,10 +50,10 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/content_settings_text_user_secname"
+                        android:hint="@string/content_settings_text_user_secname_hint"
                         android:id="@+id/content_settings_edit_text_user_secname"
                         android:gravity="left"
-                        android:textSize="14sp"
+                        android:textSize="18dp"
                         android:textColor="@android:color/black"
                         android:layout_below="@+id/content_settings_edit_text_user_name"
                         android:layout_toRightOf="@+id/profile_image"
@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/content_settings_button_date_born"
                         android:gravity="left|center_vertical"
-                        style="@android:style/TextAppearance.Holo.Medium"/>
+                        style="@android:style/TextAppearance.Holo.Large"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/content_settings_text_group_kr"
                         android:gravity="left|center_vertical"
-                        style="@android:style/TextAppearance.Holo.Medium"/>
+                        style="@android:style/TextAppearance.Holo.Large"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -159,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/content_settings_text_weight"
                         android:gravity="left|center_vertical"
-                        style="@android:style/TextAppearance.Holo.Medium"/>
+                        style="@android:style/TextAppearance.Holo.Large"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/content_settings_text_rost"
                         android:gravity="left|center_vertical"
-                        style="@android:style/TextAppearance.Holo.Medium"/>
+                        style="@android:style/TextAppearance.Holo.Large"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/content_settings_text_address"
                             android:gravity="left|center_vertical"
-                            style="@android:style/TextAppearance.Holo.Medium"/>
+                            style="@android:style/TextAppearance.Holo.Large"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -257,7 +257,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/content_settings_text_type_food"
                         android:gravity="left|center_vertical"
-                        style="@android:style/TextAppearance.Holo.Medium"/>
+                        style="@android:style/TextAppearance.Holo.Large"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -277,7 +277,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/content_settings_text_crank"
                             android:gravity="left|center_vertical"
-                            style="@android:style/TextAppearance.Holo.Medium"/>
+                            style="@android:style/TextAppearance.Holo.Large"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

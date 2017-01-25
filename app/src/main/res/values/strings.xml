@@ -4,7 +4,7 @@
     <string name="title_activity_settings">Настройки</string>
     <string name="title_activity_statistic">Статистика</string>
     <string name="title_activity_information">InformationActivity</string>
-    <string name="title_activity_food">FoodActivity</string>
+    <string name="title_activity_food">Питание</string>
 
     <!-- MainActivity -->
     <string name="content_main_text_view_user">Не выбрано</string>
@@ -85,8 +85,34 @@
     <string name="content_settings_text_save_settings">Настроойки успешно сохранены</string>
     <string name="content_settings_alert_dialog_title">Выход из аккаунта</string>
     <string name="content_settings_alert_dialog_message">Вы действительно хотите выйти?</string>
+
+    <!-- FoodActivity -->
+    <string name="text_view_food">Питание</string>
     <string name="content_food_button_local_menu">Местное меню</string>
-    <string name="content_food_button_change_restaurant">Выьор ресторана</string>
+    <string name="content_food_button_change_restaurant">Выбор ресторана</string>
     <string name="content_food_button_qr_menu">QR-меню</string>
     <string name="content_food_button_self_menu">Свое меню</string>
+
+
+    <string name="title_activity_choose_menu">Выбор меню</string>
+
+    <string name="list_view_item_morozh">Мороженое из саранчи</string>
+    <string name="list_view_item_syr">Сыр березовый с мякотью</string>
+    <string name="list_view_item_vyn">Виноград Якутский бриллиант</string>
+    <string name="list_view_item_gam">Гамбургер из кукурузы и крапивных трюфелей</string>
+    <string name="list_view_item_kofe">Кофе Ла-Рошель</string>
+    <string name="list_view_item_kartofel">Картофель дьюти-фри</string>
+    <string name="list_view_item_aple">Самурайские яблочки</string>
+    <string name="list_view_item_tea">Чай чесночный улун</string>
+    <string name="list_view_item_kash">Манная каша</string>
+
+    <string name="action_optimal">Оптимальный</string>
+    <string name="action_custom">В порядке выбора</string>
+    <string name="content_settings_edit_text_user_name_hint">Фамилия</string>
+    <string name="content_settings_text_user_secname_hint">Имя</string>
+    <string name="content_choose_menu_button_text_start_eat">Начать кушать</string>
+
+    <string name="calendar_fragment_text_title">Календарь</string>
+    <string name="graphic_fragment_text_title">График</string>
+    <!-- / -->
 </resources>
