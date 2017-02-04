@@ -1,34 +1,28 @@
 package com.example.kirill.chewstudio.StatisticActivity.Fragments;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.kirill.chewstudio.R;
-import com.example.kirill.chewstudio.StatisticActivity.Fragments.decorators.EventDecorator;
-import com.example.kirill.chewstudio.StatisticActivity.Fragments.decorators.HighlightWeekendsDecorator;
-import com.prolificinteractive.materialcalendarview.CalendarDay;
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.CalendarHelper;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+
+import hirondelle.date4j.DateTime;
 
 public class CalendarFragment extends AbstractFragment {
     private View view;
-    private TextView textViewDate;
-    private TextView textViewCalories;
-    private MaterialCalendarView calendarView;
-    private HashMap<CalendarDay, Integer> calories;
+    private CaldroidFragment caldroidFragment;
+    private HashMap<DateTime, Integer> calories;
 
     @Nullable
     @Override
@@ -39,51 +33,36 @@ public class CalendarFragment extends AbstractFragment {
     }
 
     private void initComponents() {
-        initTextView();
         initCalendarView();
     }
 
-    private void initTextView() {
-        textViewCalories = (TextView) view.findViewById(R.id.fragment_calendar_text_view_kalories);
-        textViewDate = (TextView) view.findViewById(R.id.fragment_calendar_text_view_date);
-    }
-
     private void initCalendarView() {
-        calendarView = (MaterialCalendarView) view.findViewById(R.id.calendar_view);
-        ArrayList<CalendarDay> calendarDays = new ArrayList<>();
-        calories = new HashMap<>();
+        caldroidFragment = new CaldroidSampleCustomFragment();
+        Bundle args = new Bundle();
+        Calendar cal = Calendar.getInstance();
+        args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
+        args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
+        args.putBoolean(CaldroidFragment.ENABLE_SWIPE, true);
+        args.putBoolean(CaldroidFragment.SIX_WEEKS_IN_CALENDAR, false);
+
         Calendar calendar = Calendar.getInstance();
+        calories = new HashMap<>();
+        ColorDrawable colorDrawable = new ColorDrawable(getResources().getColor(R.color.blue));
         for (int i = 0; i < 30; i++) {
-            CalendarDay day = CalendarDay.from(calendar);
-            calendarDays.add(day);
-            calories.put(day, (int) (Math.random() * 200));
+            calories.put(CalendarHelper.convertDateToDateTime(calendar.getTime()), (int) (Math.random() * 200));
+            caldroidFragment.setBackgroundDrawableForDate(colorDrawable, calendar.getTime());
             calendar.add(Calendar.DATE, 5);
         }
-        calendarView.setSelectedDate(Calendar.getInstance());
-        dateSetter();
-        calendarView.addDecorators(new HighlightWeekendsDecorator(), new EventDecorator(Color.RED, calendarDays));
-        calendarView.setOnDateChangedListener(new OnDateSelectedListener() {
-            @Override
-            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
-                dateSetter();
-            }
-        });
-    }
+        args.putSerializable(CaldroidSampleCustomFragment.CALORIES, calories);
 
-    private void dateSetter() {
-        textViewCalories.setText("");
-        textViewDate.setText(dateFormatter());
-        Integer integer = calories.get(calendarView.getSelectedDate());
-        if(integer != null)
-            textViewCalories.setText(integer +  "K");
-    }
+        Date blueDate = new Date();
+        ColorDrawable colorAccent = new ColorDrawable(getResources().getColor(R.color.colorAccent));
+        caldroidFragment.setBackgroundDrawableForDate(colorAccent, blueDate);
 
-    public String dateFormatter(){
-        DateFormat instance = SimpleDateFormat.getDateInstance();
-        CalendarDay selectedDate = calendarView.getSelectedDate();
-        if(selectedDate == null)
-            return "Не выбрано";
-        return instance.format(selectedDate.getDate());
+        caldroidFragment.setArguments(args);
+        FragmentTransaction t = getFragmentManager().beginTransaction();
+        t.replace(R.id.calendar1, caldroidFragment);
+        t.commit();
     }
 
     public static CalendarFragment getInstance(Context context){

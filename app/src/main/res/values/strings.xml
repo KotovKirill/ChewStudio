@@ -44,11 +44,11 @@
     <string name="content_settings_text_user_secname">Не выбрано</string>
     <string name="title_activity_gadget">Гаджет</string>
     <string name="content_settings_gadget">Настройки гаджета</string>
-    <string name="content_settings_text_guyphone">Жуйфон</string>
-    <string name="content_settings_gadget_mac">mac: 58-63-56-5F-1E-32</string>
-    <string name="content_settings_gadget_password">password: 1675t43</string>
+    <string name="content_settings_text_guyphone">Не выбрано</string>
+    <string name="content_settings_gadget_mac">mac: -</string>
+    <string name="content_settings_gadget_password">password: -</string>
     <string name="content_settings_change_gadget">Изменить</string>
-    <string name="title_activity_change_gadget">ChangeGadgetActivity</string>
+    <string name="title_activity_change_gadget">Выбор гаджета</string>
     <string name="title_activity_learning">Обучение</string>
     <string name="content_main_checkbox_learning">Режим обучения</string>
 
@@ -114,5 +114,6 @@
 
     <string name="calendar_fragment_text_title">Календарь</string>
     <string name="graphic_fragment_text_title">График</string>
+    <string name="main_activity_tost_bluetooth_not_supported">Bluetooth не поддерживается на данном устройстве</string>
     <!-- / -->
 </resources>

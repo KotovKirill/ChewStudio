@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/img_bluetooth"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/bluetooth_label"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_bluetooth"
+        android:layout_marginTop="4dp"
+        android:textSize="24sp"
+        android:text="Device"
+        android:layout_marginBottom="-1dp" />
+
+    <TextView
+        android:id="@+id/device_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/device_name"
+        android:layout_toEndOf="@id/img_bluetooth"
+        android:textSize="12sp"
+        android:text="Address"
+        android:layout_marginBottom="3dp" />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="12dp"
+        android:id="@+id/img_rssi"
+        android:src="@drawable/signal_strength_bar_3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-5dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_rssi"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="12sp"
+        android:text="-99 dB"
+        android:id="@+id/device_rssi"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

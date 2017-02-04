@@ -7,7 +7,7 @@ class Dish implements Cloneable{
     private String energy;
     private int drawable;
 
-    Dish(int drawableAvatar, int name, String weight, String energy, int drawable) {
+    public Dish(int drawableAvatar, int name, String weight, String energy, int drawable) {
         this.drawableAvatar = drawableAvatar;
         this.name = name;
         this.weight = weight;

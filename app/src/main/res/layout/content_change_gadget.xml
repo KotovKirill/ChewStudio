@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="false"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.kirill.chewstudio.SettingsActivity.GadgetActivity.ChangeGadgetActivity"
-    tools:showIn="@layout/activity_change_gadget">
+    android:padding="10dp">
 
-</RelativeLayout>
+    <ProgressBar
+        style="@style/MyProgressBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar1"
+        android:clickable="false"
+        android:indeterminate="false"
+        android:max="99"
+        android:progress="100"
+        android:layout_marginTop="-6dp"
+        android:layout_marginBottom="-7dp" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView1"
+        android:choiceMode="singleChoice"
+        android:fastScrollAlwaysVisible="false"
+        android:fastScrollEnabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textFilterEnabled="false"
+        android:clickable="false"
+        android:visibility="gone" />
+
+</LinearLayout>

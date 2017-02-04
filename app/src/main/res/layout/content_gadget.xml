@@ -40,12 +40,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/content_settings_text_guyphone"
-                            style="@android:style/TextAppearance.Holo.Large"/>
+                            style="@android:style/TextAppearance.Holo.Large"
+                            android:id="@+id/content_settings_text_name_device"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/content_settings_gadget_mac"
-                            style="@style/Base.TextAppearance.AppCompat.Medium"/>
+                            style="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:id="@+id/content_settings_text_mac_device"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

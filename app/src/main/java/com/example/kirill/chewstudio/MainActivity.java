@@ -48,11 +48,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
+
         this.mSettings = getSharedPreferences(EditAccountSettingsActivity.ACCOUNT_PREFERENCES,
                 Context.MODE_PRIVATE);
         initToolbar();
         initNavigationView();
     }
+
 
     private void initToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);

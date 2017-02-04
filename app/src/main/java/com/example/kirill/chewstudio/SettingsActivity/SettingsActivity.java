@@ -170,6 +170,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         settingsRefresh(EditAccountSettingsActivity.ACCOUNT_PREFERENCES);
         settingsRefresh(NotificationActivity.NOTIFICATIONS_PREFERENCES);
         settingsRefresh(LearningActivity.LEARNING_PREFERENCES);
+        settingsRefresh(GadgetActivity.BLUETOOTH_PREFERENCES);
         Toast.makeText(SettingsActivity.this, "Настройки восстановлены", Toast.LENGTH_SHORT).show();
         finish();
     }

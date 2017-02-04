@@ -6,4 +6,6 @@
     <color name="colorButtonPressed">#BBDEFB</color>
     <color name="colorButtonExit">#90CAF9</color>
     <color name="colorTintItemNavigationView">#757575</color>
+
+    <color name="blue">#ff33b5e5</color>
 </resources>
