@@ -39,6 +39,7 @@ public class StatisticActivity extends AppCompatActivity {
     private void initTabs() {
         this.viewPager = (ViewPager) this.findViewById(R.id.view_pager_statistic);
         this.viewPager.setAdapter(new PagerAdapter(this, getSupportFragmentManager()));
+        viewPager.setCurrentItem(1);
 
         TabLayout tabLayout = (TabLayout) this.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(this.viewPager);

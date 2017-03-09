@@ -8,4 +8,9 @@
     <color name="colorTintItemNavigationView">#757575</color>
 
     <color name="blue">#ff33b5e5</color>
+
+
+    <color name="red">#FA5858</color>
+    <color name="green">#74DF00</color>
+    <color name="yellow">#D7DF01</color>
 </resources>

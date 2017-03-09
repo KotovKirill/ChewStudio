@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.kirill.chewstudio.R;
 import com.example.kirill.chewstudio.SettingsActivity.GadgetActivity.GadgetActivity;
+import com.example.kirill.chewstudio.StatisticActivity.Fragments.GraphicFragment;
 
 import java.io.IOException;
 
@@ -171,6 +172,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         settingsRefresh(NotificationActivity.NOTIFICATIONS_PREFERENCES);
         settingsRefresh(LearningActivity.LEARNING_PREFERENCES);
         settingsRefresh(GadgetActivity.BLUETOOTH_PREFERENCES);
+        settingsRefresh(GraphicFragment.PREFERENCES_GRAPHIC);
         Toast.makeText(SettingsActivity.this, "Настройки восстановлены", Toast.LENGTH_SHORT).show();
         finish();
     }

@@ -1,4 +1,4 @@
-package com.example.kirill.chewstudio.StatisticActivity.Fragments;
+package com.example.kirill.chewstudio.StatisticActivity.Fragments.CalendarFragment;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kirill.chewstudio.R;
+import com.example.kirill.chewstudio.StatisticActivity.Fragments.AbstractFragment;
+import com.example.kirill.chewstudio.StatisticActivity.Fragments.Food;
 import com.roomorama.caldroid.CaldroidFragment;
-import com.roomorama.caldroid.CalendarHelper;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +23,7 @@ import hirondelle.date4j.DateTime;
 public class CalendarFragment extends AbstractFragment {
     private View view;
     private CaldroidFragment caldroidFragment;
-    private HashMap<DateTime, Integer> calories;
+    private HashMap<DateTime, Food> food;
 
     @Nullable
     @Override
@@ -46,18 +47,17 @@ public class CalendarFragment extends AbstractFragment {
         args.putBoolean(CaldroidFragment.SIX_WEEKS_IN_CALENDAR, false);
 
         Calendar calendar = Calendar.getInstance();
-        calories = new HashMap<>();
+        food = (HashMap<DateTime, Food>) getArguments().getSerializable(CaldroidSampleCustomFragment.FOOD);
         ColorDrawable colorDrawable = new ColorDrawable(getResources().getColor(R.color.blue));
-        for (int i = 0; i < 30; i++) {
-            calories.put(CalendarHelper.convertDateToDateTime(calendar.getTime()), (int) (Math.random() * 200));
+        for (int i = 0; i < food.size(); i++) {
             caldroidFragment.setBackgroundDrawableForDate(colorDrawable, calendar.getTime());
-            calendar.add(Calendar.DATE, 5);
+            calendar.add(Calendar.DATE, 4);
         }
-        args.putSerializable(CaldroidSampleCustomFragment.CALORIES, calories);
+        args.putSerializable(CaldroidSampleCustomFragment.FOOD, food);
 
-        Date blueDate = new Date();
+        Date toDay = new Date();
         ColorDrawable colorAccent = new ColorDrawable(getResources().getColor(R.color.colorAccent));
-        caldroidFragment.setBackgroundDrawableForDate(colorAccent, blueDate);
+        caldroidFragment.setBackgroundDrawableForDate(colorAccent, toDay);
 
         caldroidFragment.setArguments(args);
         FragmentTransaction t = getFragmentManager().beginTransaction();

@@ -1,4 +1,4 @@
-package com.example.kirill.chewstudio.StatisticActivity.Fragments;
+package com.example.kirill.chewstudio.StatisticActivity.Fragments.CalendarFragment;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.kirill.chewstudio.R;
+import com.example.kirill.chewstudio.StatisticActivity.Fragments.Food;
 import com.roomorama.caldroid.CaldroidGridAdapter;
 
 import java.util.HashMap;
@@ -17,13 +18,13 @@ import java.util.Map;
 import hirondelle.date4j.DateTime;
 
 public class CaldroidSampleCustomAdapter extends CaldroidGridAdapter {
-	private HashMap<DateTime, Integer> calories;
+	private HashMap<DateTime, Food> food;
 	public CaldroidSampleCustomAdapter(Context context, int month, int year,
 									   Map<String, Object> caldroidData,
 									   Map<String, Object> extraData,
-									   HashMap<DateTime, Integer> calories) {
+									   HashMap<DateTime, Food> food) {
 		super(context, month, year, caldroidData, extraData);
-		this.calories = calories;
+		this.food = food;
 	}
 
 	@Override
@@ -54,9 +55,14 @@ public class CaldroidSampleCustomAdapter extends CaldroidGridAdapter {
 					.getColor(com.caldroid.R.color.caldroid_darker_gray));
 		}
 
-		Integer calorie = calories.get(dateTime);
-		if(calorie != null)
-			tv2.setText(calorie.toString());
+		Food food = this.food.get(dateTime);
+		if(food != null){
+			int[] calories = food.getCalories();
+			int calorie = 0;
+			for (int calory : calories)
+				calorie += calory;
+			tv2.setText(String.valueOf((calorie)));
+		}
 
 		tv1.setText("" + dateTime.getDay());
 		cellView.setPadding(leftPadding, topPadding, rightPadding,

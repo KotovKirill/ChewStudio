@@ -15,6 +15,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -28,6 +30,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.kirill.chewstudio.FoodActivity.ChooseMenuActivity.ChooseMenuActivity;
+import com.example.kirill.chewstudio.FoodActivity.ChooseMenuActivity.EatActivity.EatActivity;
 import com.example.kirill.chewstudio.R;
 
 import java.util.ArrayList;
@@ -198,6 +201,16 @@ public class ChangeGadgetActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);                                                         // Стандартные функции при создании активити
         setContentView(R.layout.activity_change_gadget);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDevices.clear();
+                constructLeLister();
+                scanLeDevice();
+            }
+        });
+
         //this.initToolbar();
         preferences = getSharedPreferences(GadgetActivity.BLUETOOTH_PREFERENCES, Context.MODE_PRIVATE);
 //        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
@@ -297,7 +310,7 @@ public class ChangeGadgetActivity extends AppCompatActivity
                 edit.apply();
 
                 Bundle extras = getIntent().getExtras();
-                if(extras != null && extras.getInt(ChooseMenuActivity.REQUEST_FLAG_GADGET) == 1){
+                if(extras != null && extras.getInt(EatActivity.REQUEST_FLAG_GADGET) == 1){
                     setResult(RESULT_OK);
                     finish();
                 }

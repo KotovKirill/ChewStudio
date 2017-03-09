@@ -61,7 +61,7 @@
     <string name="content_settings_radio_button_melody">Мелодия</string>
     <string name="title_activity_about_us">AboutUsActivity</string>
     <string name="text_view_version">Версия 0.0.1</string>
-    <string name="text_view_author">© 2016 Organization Name.</string>
+    <string name="text_view_author">© 2016 Сауно.</string>
     <string name="text_view_rights_reserved">All rights reserved.</string>
     <string name="intent_builder_text_message">Ваше сообщение ...</string>
     <string name="intent_builder_text_title">Отправить сообщение</string>
@@ -97,6 +97,19 @@
     <string name="title_activity_choose_menu">Выбор меню</string>
 
     <string name="list_view_item_morozh">Мороженое из саранчи</string>
+    <string name="list_view_item_morozh_description">Работники магазина собрали цикад возле своих домов, затем сварили их, покрыли коричневым сахаром,
+        молочным шоколадом и добавили в мороженое. Мороженое со вкусом цикад пришлось по вкусу покупателям. Лучшее спасение от летнего зноя.</string>
+    <string name="list_view_item_syr_description">Сыр можно подавать как закуску к белому вину и для этого совершенно не обязательно делать канапе,
+        можно просто нарезать его кусочками. Ни одна сытная запеканка не обходится без хрустящей золотистой корочки тертого сыра. </string>
+    <string name="list_view_item_vyn_description">Виноград – ягода, используемая в сыром виде, а также в десертах и выпечке.
+        Виноградный сок используется для изготовления других соков, различных напитков, желе и вина.</string>
+    <string name="list_view_item_gamb_description">Этот вегетарианский гамбургер обеспечивает почти половину суточной потребности организма в клетчатке и обогащает организм необходимыми микроэлементами.</string>
+    <string name="list_view_item_kofe_description">кофе помогает усваиванию пищи, для чего нужно предлагается чашечку этого напитка после обеда. Практикум Здорового Образа Жизни</string>
+    <string name="list_view_item_free_description">Картофель – это важный источник калия, йода, железа, натрия и магния, а также витаминов В1, В2 и С.
+        Немалая часть полезных веществ утрачивается в процессе приготовления и термической обработки.</string>
+    <string name="list_view_item_apple_description">Сочные, вкусные райские яблоки очень любят в России. Они богаты витаминами, как все полезные овощи и фрукты. А главное — это лучшее украшение садов.</string>
+    <string name="list_view_item_chay_description">Чай чесночный улун богат антиоксидантами, целым комплексом витаминов и минералов, а также в его состав входят кофеин, соединения полифенола и большое количество эфирных масел. </string>
+    <string name="list_view_item_kasha_description">Манная каша хороша для поддержания ослабленных сил организма после перенесённых заболеваний, во время упадка сил или после нервных расстройств.</string>
     <string name="list_view_item_syr">Сыр березовый с мякотью</string>
     <string name="list_view_item_vyn">Виноград Якутский бриллиант</string>
     <string name="list_view_item_gam">Гамбургер из кукурузы и крапивных трюфелей</string>
@@ -115,5 +128,16 @@
     <string name="calendar_fragment_text_title">Календарь</string>
     <string name="graphic_fragment_text_title">График</string>
     <string name="main_activity_tost_bluetooth_not_supported">Bluetooth не поддерживается на данном устройстве</string>
+    <string name="fragment_graphic_statistic_checkbox_show_calories">Отображать калории</string>
+    <string name="fragment_graphic_statistic_checkbox_show_proteins">Отображать белки</string>
+    <string name="fragment_graphic_statistic_checkbox_show_fats">Отображать жиры</string>
+    <string name="fragment_graphic_statistic_checkbox_show_carbohydrates">Отображать углеводы</string>
+    <string name="fragment_graphic_statistic_text_view_change_date">Период: </string>
+    <string name="title_activity_eat">Питание</string>
+    <string name="content_eat_text_view_calories">Калории:</string>
+    <string name="content_eat_text_view_proteins">Белки:</string>
+    <string name="content_eat_text_view_fats">Жиры:</string>
+    <string name="content_eat_text_view_carb">Углеводы:</string>
+    <string name="content_eat_text_view_chews">Жевания:</string>
     <!-- / -->
 </resources>

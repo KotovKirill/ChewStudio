@@ -3,8 +3,8 @@
     package="com.example.kirill.chewstudio">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
@@ -65,6 +65,10 @@
         <activity
             android:name=".FoodActivity.ChooseMenuActivity.ChooseMenuActivity"
             android:label="@string/title_activity_choose_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodActivity.ChooseMenuActivity.EatActivity.EatActivity"
+            android:label="@string/title_activity_eat"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
